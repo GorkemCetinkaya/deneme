@@ -15,5 +15,6 @@ public class MailSoru {
         } else {
             System.out.println("Email adresiniz başarıyla kaydedilmiştir");
         }
+
     }
 }
