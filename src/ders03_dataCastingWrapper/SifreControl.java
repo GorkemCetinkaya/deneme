@@ -29,6 +29,9 @@ public class SifreControl {
             sonuc= ozelKarakterKontroluYap(sifre);
             bayrak=bayrak+sonuc;
 
+            sonuc= sayiKontroluYap(sifre);
+            bayrak=bayrak+sonuc;
+
             if (sifre.length()<8){
                 System.out.println("Şifre en az 8 karakter olmlıdır");
 
@@ -36,8 +39,26 @@ public class SifreControl {
                 bayrak++;
             }
 
-        }while (bayrak!= 4);
+        }while (bayrak!= 5);
         System.out.println("Şifreniz başarıyla kaydedildi");
+    }
+
+    private static int sayiKontroluYap(String sifre) {
+        int bayrak=0;
+
+        for (int i = 0; i <sifre.length(); i++){
+            if (sifre.charAt(i)>='0' && sifre.charAt(i)<='9'){
+                bayrak++;
+                break;
+            }
+
+        }
+        if (bayrak==0){
+            System.out.println("Şifre sayı içermelidir");
+            return 0;
+        }else return 1;
+
+
     }
 
     private static int ozelKarakterKontroluYap(String sifre) {
